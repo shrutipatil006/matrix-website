@@ -1,0 +1,239 @@
+# matrix-website
+a simple matrix-inspired website project
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the World of Magnum - Matrix Style</title>
+    <style>
+        /* Reset default margins and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Full screen black background */
+        body {
+            background-color: black;
+            color: #00FF00;  /* Green text, like Matrix code */
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        /* Welcome message styling */
+        .welcome-message {
+            font-size: 40px;
+            color: black;
+            text-shadow: 0 0 15px #00FF00, 0 0 30px #00FF00;
+            margin-bottom: 20px;
+            z-index: 2;
+        }
+
+        .sub-message {
+            font-size: 20px;
+            color: black;
+            text-shadow: 0 0 15px #00FF00, 0 0 30px #00FF00;
+            margin-top: 10px;
+            z-index: 2;
+        }
+
+        /* Matrix Effect */
+        .matrix {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;  /* Make the effect not interfere with clicking or interaction */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .matrix-line {
+            font-size: 30px;
+            letter-spacing: 2px;
+            color: #00FF00;
+            position: absolute;
+            top: -100%;
+            animation: drop 2s infinite linear;
+            opacity: 0;
+        }
+
+        /* Keyframes for the matrix effect - falling code animation */
+        @keyframes drop {
+            0% {
+                top: -100%;
+                opacity: 0;
+            }
+            50% {
+                top: 50%;
+                opacity: 1;
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+        /* Make the lines appear randomly in time and position */
+        .matrix-line:nth-child(1) { animation-duration: 1.5s; animation-delay: 0s; }
+        .matrix-line:nth-child(2) { animation-duration: 1.7s; animation-delay: 0.2s; }
+        .matrix-line:nth-child(3) { animation-duration: 1.9s; animation-delay: 0.4s; }
+        .matrix-line:nth-child(4) { animation-duration: 2.1s; animation-delay: 0.6s; }
+        .matrix-line:nth-child(5) { animation-duration: 1.6s; animation-delay: 0.8s; }
+        .matrix-line:nth-child(6) { animation-duration: 2.3s; animation-delay: 1s; }
+        .matrix-line:nth-child(7) { animation-duration: 1.8s; animation-delay: 1.2s; }
+        .matrix-line:nth-child(8) { animation-duration: 2.0s; animation-delay: 1.4s; }
+    </style>
+</head>
+<body>
+    <!-- Welcome Message -->
+    <div class="welcome-message">
+        <h1>Welcome to the World Of Magnum</h1>
+        <p class="sub-message">A jaw-dropping world of possibilities</p>
+    </div>
+
+    <!-- Matrix Animation -->
+    <div class="matrix">
+        <div class="matrix-line">1</div>
+        <div class="matrix-line">0</div>
+        <div class="matrix-line">1</div>
+        <div class="matrix-line">1</div>
+        <div class="matrix-line">0</div>
+        <div class="matrix-line">1</div>
+        <div class="matrix-line">1</div>
+        <div class="matrix-line">0</div>
+    </div>
+</body>
+</html>
+<page-break-before>{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About My College</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <h1>About My College</h1>
+        <p>
+           Magnum is the inhouse event conducted by Gogte college of commerce belgaum, to encourage students of the college to improve themselves in many technical as well as in non-technocal events
+        </p>
+        <p>
+           In magnum more then 10 events are conducted the events may be coding,data analytics,cyber security,communication,contenet creation etc
+        </p>
+        <p>
+           Through this events the students get opportunity to learn from their seniors.
+        </p>
+    </div>
+</body>
+</html>
+</page-break-before>}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Coding?</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        /* Section Styles */
+        .content {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 2em;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 20px 0;
+            color: #555;
+        }
+
+        .features {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .features h3 {
+            font-size: 1.8em;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .features ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .features ul li {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .features ul li::before {
+            content: '✔️';
+            color: #4CAF50;
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <p>epic challenges faced in coding is more compition among the participants and the other may be unavilability of electronic equipment near the participants as this were the challenges but as move forward and learn it deeply</p>
+        <p>as coding is compilcated it is also also that trilling and intresting as the compition increases</p>
+    </header>
