@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Matrix World</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: black;
+            color: #00FF00; /* Matrix green */
+            overflow: hidden;
+        }
+
+        /* Container to center content */
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        /* Title and text styles */
+        h1 {
+            font-size: 4rem;
+            text-shadow: 0 0 15px rgba(0, 255, 0, 0.7), 0 0 25px rgba(0, 255, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.5rem;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+
+        /* Matrix rain effect */
+        .matrix {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .matrix span {
+            position: absolute;
+            color: #00FF00;
+            font-size: 20px;
+            opacity: 0;
+            animation: matrixRain 5s infinite linear;
+        }
+
+        @keyframes matrixRain {
+            0% {
+                top: -100px;
+                opacity: 1;
+            }
+            100% {
+                top: 100%;
+                opacity: 0.1;
+            }
+        }
+
+        /* Add a slight delay to each span element for a falling effect */
+        .matrix span:nth-child(odd) {
+            animation-duration: 6s;
+        }
+
+        .matrix span:nth-child(even) {
+            animation-duration: 7s;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Welcome Text -->
+    <div class="container">
+        <h1>Welcome to the World</h1>
+        <p>Filled with Matrix</p>
+    </div>
+
+    <!-- Matrix Rain Effect -->
+    <div class="matrix" id="matrix"></div>
+
+    <script>
+        // Generate matrix rain effect
+        const matrix = document.getElementById('matrix');
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        
+        // Number of characters to generate
+        const numberOfCharacters = 150;
+
+        for (let i = 0; i < numberOfCharacters; i++) {
+            const span = document.createElement('span');
+            span.textContent = characters[Math.floor(Math.random() * characters.length)];
+            span.style.left = Math.random() * window.innerWidth + 'px'; // Randomize position
+            span.style.animationDelay = Math.random() * 5 + 's'; // Randomize animation start
+            matrix.appendChild(span);
+        }
+    </script>
+
+</body>
+</html>
